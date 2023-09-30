@@ -1,0 +1,85 @@
+html, body {
+    background-color: hsl(309, 100%, 9%);
+}
+
+.todo {
+    margin: 50px auto;
+    width: 500px;
+    height: 800px;
+    border: 5px solid #6E6E6E;
+    border-radius: 10px;
+    background: linear-gradient(
+        135deg,
+        rgb(248, 248, 248) 25%, #fff 25%, #fff 50%,
+        rgb(248, 248, 248) 50%, 
+        rgb(248, 248, 248) 75%, #fff 75%, #fff
+    );
+    background-size: 100px 100px;
+}
+
+.input-container {
+    width: 400px;
+    height: 80px;
+    margin: 40px auto 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid #6E6E6E;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.todo-input {
+    width: 270px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-family: 'Onest', sans-serif;
+}
+         
+.btn {
+    background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff  51%, #ff6e7f  100%);
+    margin: 10px 0 10px 10px;
+    padding: 13px 33px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(17, 1, 1);            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    border-color: #a4a4a4;
+    font-family: 'Onest', sans-serif;
+}
+
+.btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.todos-container {
+    width: 400px;
+    height: 600px;
+    margin: 50px auto;
+    font-family: 'Onest', sans-serif;
+    border: 2px solid #6E6E6E;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.todo-container{
+    margin: 20px;
+    border: 2px solid #6E6E6E;
+    border-radius: 5px;
+}
+ 
