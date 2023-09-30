@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+       "target": "es6",
+       "removeComments": true,
+       "outFile": "script.js",
+       "strict": true,//  "noImplicitAny": true,  "strictNullChecks": true
+       "module": "AMD",
+       "sourceMap": true
+    }
+ }
