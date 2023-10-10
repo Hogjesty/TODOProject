@@ -2,9 +2,11 @@
     "compilerOptions": {
        "target": "es6",
        "removeComments": true,
-       "outFile": "script.js",
+       "module": "ES6",
+       "outDir": "dist",
        "strict": true,//  "noImplicitAny": true,  "strictNullChecks": true
-       "module": "AMD",
-       "sourceMap": true
-    }
+       "sourceMap": true,
+       "rootDir": "src"
+    },
+    "include": ["src/**/*.ts"]
  }

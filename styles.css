@@ -15,12 +15,15 @@ html, body {
         rgb(248, 248, 248) 75%, #fff 75%, #fff
     );
     background-size: 100px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .input-container {
     width: 400px;
     height: 80px;
-    margin: 40px auto 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -31,7 +34,6 @@ html, body {
 
 .todo-input {
     width: 270px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-shadow: inset 0 1px 3px #ddd;
@@ -69,7 +71,7 @@ html, body {
 
 .todos-container {
     width: 400px;
-    height: 600px;
+    height: 520px;
     margin: 50px auto;
     font-family: 'Onest', sans-serif;
     border: 2px solid #6E6E6E;
@@ -101,7 +103,6 @@ html, body {
 .delete-btn:active {
     background-color: rgb(255, 190, 77);
 }
-
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
     input[type=checkbox] {
@@ -193,4 +194,27 @@ html, body {
     }
 }
 
+.pagination, .page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination {
+  max-width: 300px;
+  min-width: 120px;
+}
+
+.page {
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  justify-content: center;
+}
+
+.page:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
  
