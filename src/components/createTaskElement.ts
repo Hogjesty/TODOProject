@@ -1,10 +1,10 @@
 import { TODOS_KEY } from "../constantes/constance.js";
 import { Todo } from "../interfaces/todo.interface";
 import { createElementsWithStyles } from "./createElemetsWithStyles.js";
-import { pagination } from "./pagination.js";
+import { PaginationManager } from "./pagination.js";
 import { setTodoToLocalStorage } from "./setTodoToLocalStorage.js";
 
-export function createTaskElement(todoData: Todo): HTMLDivElement {
+export function createTaskElement(todoData: Todo, paginationManager: PaginationManager): HTMLDivElement {
 
     const [div, checkbox, deleteButton, todosTitle] = createElementsWithStyles(todoData);
 
@@ -21,7 +21,7 @@ export function createTaskElement(todoData: Todo): HTMLDivElement {
         todos = todos.filter((todo: Todo) => todo.id !== todoData.id)
         setTodoToLocalStorage(todos);
         div.remove();
-        pagination(document.querySelector<HTMLDivElement>(".pagination"));
+        paginationManager.changePaginationSize();
     });
 
     div.append(checkbox, todosTitle, deleteButton);

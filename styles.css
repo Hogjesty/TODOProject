@@ -205,11 +205,20 @@ html, body {
   min-width: 120px;
 }
 
-.page {
+.page, .dots {
   width: 35px;
   height: 35px;
   background-color: #fff;
   justify-content: center;
+  user-select: none;
+}
+
+.hidden-page {
+  display: none;
+}
+
+.selected-page {
+  background-color: #0079ea;
 }
 
 .page:hover {

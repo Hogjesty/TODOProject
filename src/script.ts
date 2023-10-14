@@ -1,5 +1,5 @@
 import { createTaskElement } from "./components/createTaskElement.js";
-import { pagination } from "./components/pagination.js";
+import { PaginationManager } from "./components/pagination.js";
 import { setTodoToLocalStorage } from "./components/setTodoToLocalStorage.js";
 import { TODOS_KEY } from "./constantes/constance.js";
 import { Todo } from "./interfaces/todo.interface";
@@ -9,16 +9,26 @@ const todosInput = document.querySelector<HTMLInputElement>(".todo-input");
 const addNewTodoButton = document.querySelector<HTMLButtonElement>(".btn");
 const paginationContainer = document.querySelector<HTMLDivElement>(".pagination");
 
+const paginationManager = new PaginationManager(paginationContainer ?? document.createElement("div"));
+
 let todos = JSON.parse(`${localStorage.getItem(TODOS_KEY)}`) ?? [];
 todos.forEach((todoData: Todo) => {
-    todosContainer?.append(createTaskElement(todoData));
+    todosContainer?.append(createTaskElement(todoData, paginationManager));
 });
 
-pagination(paginationContainer);
+paginationContainer?.addEventListener("click", event => {
+    const clickedElement = event.target as HTMLElement;
+
+    if (!clickedElement.classList.contains("page")) {
+        return;
+    }
+
+    paginationManager.redrawPages(parseInt(clickedElement.innerText));
+});
 
 addNewTodoButton?.addEventListener("click", event => {
     const text = todosInput?.value;
-
+    let todosLocal = JSON.parse(`${localStorage.getItem(TODOS_KEY)}`) ?? [];
     if (!text) {
         return;
     }
@@ -29,10 +39,11 @@ addNewTodoButton?.addEventListener("click", event => {
         resolved: false
     };
 
-    todosContainer?.append(createTaskElement(newTodo));
+    todosContainer?.append(createTaskElement(newTodo, paginationManager));
 
-    setTodoToLocalStorage(todos = [...todos, newTodo]);
-    pagination(document.querySelector<HTMLDivElement>(".pagination"));
+    setTodoToLocalStorage(todos = [...todosLocal, newTodo]);
+
+    paginationManager.changePaginationSize();
 });
 
 

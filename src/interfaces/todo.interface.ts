@@ -6,3 +6,5 @@ export interface Todo {
 
 export type HtmlElements = [HTMLDivElement, HTMLInputElement, HTMLButtonElement, HTMLParagraphElement];
 //export type HtmlElements = HTMLDivElement | HTMLInputElement | HTMLButtonElement | HTMLParagraphElement;
+
+export type Dots = {first: HTMLDivElement, second: HTMLDivElement};
